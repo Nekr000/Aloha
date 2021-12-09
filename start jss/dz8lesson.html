@@ -1,0 +1,45 @@
+<input value="Egor" class="first-name" id="first-name" />
+<input value="Kudin" class='secondName' id='secondName' />
+<input value='Voronyanskogo' class='adress' id='adress' />
+<select name="city" id="city">
+    <option>Moscow</option>
+    <option selected>Minsk</option>
+    <option>Kiev</option>
+</select>
+<textarea name="Nekr" id="hobby" cols="30" rows="10">code code code code</textarea>
+<div><img src="https://mirpozitiva.ru/wp-content/uploads/2019/11/1480505775_cosmos_0011.jpg" alt="https://mirpozitiva.ru/wp-content/uploads/2019/11/1480505775_cosmos_0011.jpg"></div>
+
+
+
+
+<script>
+    var firstNameEl;
+    var firstNameId;
+    var secondNameEl;
+    var secondNameId;
+    var adressEl;
+    var adressId;
+    var cityEl;
+    var cityId;
+    var hobbyEl;
+    var hobbyId;
+
+    cityId = 'city';
+    cityEl = document.getElementById(cityId);
+    firstNameId = 'first-name';
+    firstNameEl = document.getElementById(firstNameId);
+    secondNameId = 'secondName';
+    secondNameEl = document.getElementById(secondNameId);
+    adressId = 'adress';
+    adressEl = document.getElementById(adressId);
+    hobbyId = 'hobby';
+    hobbyEl = document.getElementById(hobbyId);
+
+    window.alert(firstNameEl.className);
+    window.alert(secondNameEl.className);
+    window.alert(adressEl.className);
+    window.alert(cityEl.value);
+    window.alert(hobbyEl.value);
+
+    
+</script>
