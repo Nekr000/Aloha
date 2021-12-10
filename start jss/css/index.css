@@ -1,0 +1,17 @@
+
+    .default-input {
+        border: green 5px solid;
+        padding: 5px;
+    }
+
+    .error-input {
+        border-color: red;
+    }
+
+    .wrapper {
+        width: 620px;
+        height: 110px;
+        margin: 0;
+        padding: 10px;
+        border: 6px solid mediumturquoise;
+    }
