@@ -71,38 +71,55 @@ popitkaEl.innerHTML = '<ul id="technologies-list"><li>Keep<li>Calm<li>And<li>Mak
 // window.alert(screenEl.innerHTML);
 // window.alert(screenEl.alt);
 // window.alert(screenEl.src);
-function setMyNameToAllInputs(inputType1) {
-    var inputType1Id = 'inputType1' + inputType1;
+function setMyNameToAllInputs() {
+    var newName = "Ekaterina";
+    var inputType1Id = 'inputType1';
+    var inputType1El = document.getElementById("inputType1");
+    inputType1El.value = newName;
+    var inputType2Id = 'inputType2';
+    var inputType2El = document.getElementById(inputType2Id);
+    inputType2El.value = newName;
+    var inputType3Id = 'inputType3';
+    var inputType3El = document.getElementById(inputType3Id);
+    inputType3El.value = newName;
+}
+function setMyLatNameToAllInputs() {
+    var newLastName = "Great";
+
+    var inputType1Id = 'inputType1';
     var inputType1El = document.getElementById(inputType1Id);
-    inputType1El.value = "Ekaterina";
+    inputType1El.value = newLastName;
+
+    var inputType2Id = 'inputType2';
+    var inputType2El = document.getElementById(inputType2Id);
+    inputType2El.value = newLastName;
+
+    var inputType3Id = 'inputType3';
+    var inputType3El = document.getElementById(inputType3Id);
+    inputType3El.value = newLastName;
+}
+function changeValue(newName) {
+    var newName = "Ekaterina";
+    var newLastName = "Great";
+}
+setMyNameToAllInputs();
+setMyLatNameToAllInputs();
+
+changeValue("lol");
+var inputType3Id = 'inputType3';
+var inputType3El = document.getElementById(inputType3Id);
+inputType3El.classList.add("error");
+var inputType2Id = 'inputType2';
+var inputType2El = document.getElementById(inputType2Id);
+inputType2El.classList.add("error");
+var inputType1Id = 'inputType1';
+var inputType1El = document.getElementById(inputType1Id);
+inputType1El.classList.add("error");
+
+function setError(idElem) {
     
 }
-setMyNameToAllInputs(inputType1);
-setMyNameToAllInputs(inputType2);
 
-// var inputType1Id = 'inputType1';
-// var inputType1El = document.getElementById(inputType1Id);
-// inputType1El.value = "Ekaterina";
-
-// var inputType2Id = 'inputType2';
-// var inputType2El = document.getElementById(inputType2Id);
-// inputType2El.value = "Ekaterina";
-
-// var inputType3Id = 'inputType3';
-// var inputType3El = document.getElementById(inputType3Id);
-// inputType3El.value = "Ekaterina";
-
-// var inputType1Id = 'inputType1';
-// var inputType1El = document.getElementById(inputType1Id);
-// inputType1El.value = "Great";
-
-// var inputType2Id = 'inputType2';
-// var inputType2El = document.getElementById(inputType2Id);
-// inputType2El.value = "Great";
-
-// var inputType3Id = 'inputType3';
-// var inputType3El = document.getElementById(inputType3Id);
-// inputType3El.value = "Great";
 // var inputType1Id = 'inputType1';
 // var inputType1El = document.getElementById(inputType1Id);
 // inputType1El.value = "Ekaterina";
