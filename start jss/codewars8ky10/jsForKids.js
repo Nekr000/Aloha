@@ -35,3 +35,39 @@ var z = x.slice(1);
 var g = z.toLowerCase();
 a+g;
 
+
+var stroka = "эЙ, кАК деЛа?";
+stroka[0].toUpperCase() + stroka.slice(1).toLowerCase();
+
+
+
+var age = 11;
+var accompanied = false;
+if (age > 12 || accompanied === true ) {
+    console.log("Yes");
+} 
+  console.log("No");
+
+
+var roadToHome = [];
+roadToHome.push("apteka");
+roadToHome.push("ring");
+roadToHome.push("Macdonalds");
+roadToHome.push("Fonar");
+roadToHome.push("Ygol");
+
+
+roadToHome.pop("Ygol");
+roadToHome.pop("Fonar");
+roadToHome.pop("Macdonalds");
+roadToHome.pop("ring");
+roadToHome.pop("apteka");
+
+console.log(roadToHome);
+
+
+//vot i otvet na moi vopros 
+
+var variant = ["x", "y", "z", "V ", "r", "t", "h"];
+variant[Math.floor(Math.random() * 7)];
+
