@@ -22,4 +22,37 @@ const quarterOf = (month) => {
       }
   }
 
-  
+  //Total amount of points ?????
+  function points(games) {
+    let point;
+    const result = games.map((num) => {
+       if(Number(num.charAt(0)) > Number(num.charAt(2))) {
+         return point = 3;
+       }else if(Number(num.charAt(0)) === Number(num.charAt(2))){
+         return point = 1;
+       }else {
+         return point = 0;
+      }
+    })
+    
+    return result.reduce((x, y) => x + y);
+  }
+//Cat Year Dog Years
+  var humanYearsCatYearsDogYears = function(humanYears) {
+    // Your code here!
+    if (humanYears == 1) {return [1, 15, 15];}
+    if (humanYears == 2) {return [2, 24, 24];}
+    return [humanYears, 24+((humanYears-2)*4), 24+(humanYears-2)*5];
+  }
+// Array plus array ????
+  function arrayPlusArray(arr1, arr2) {
+    return arr1.concat(arr2).reduce((a, b) => a + b);
+  }
+  // reversed sequence
+  const reverseSeq = n => {
+    const x = [];
+    for (let i = n;  i > 0; i -=1){
+     x.push(i);
+    }
+    return x;
+  };
