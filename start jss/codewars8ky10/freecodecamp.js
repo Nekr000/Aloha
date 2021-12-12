@@ -489,4 +489,24 @@ function randomWholeNum() {
     function countdown(n){
         return n < 1 ? [] : [n].concat(countdown(n - 1));
      }
-     
+     //99% ????
+     function rangeOfNumbers(startNum, endNum) {
+        if (endNum - startNum === 0) {
+          return [startNum];
+        } else {
+          var numbers = rangeOfNumbers(startNum, endNum - 1);
+          numbers.push(endNum);
+          return numbers;
+        }
+      }
+//100 basic%????
+function checkScope() {
+    "use strict";
+    let i = "function scope";
+    if (true) {
+      let i = "block scope";
+      console.log("Block scope i is: ", i);
+    }
+    console.log("Function scope i is: ", i);
+    return i;
+  }
