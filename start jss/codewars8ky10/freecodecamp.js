@@ -173,4 +173,138 @@ function phoneticLookup(val) {
   
     // Only change code above this line
   }
+  //81% polomano reshil 4erez google xD
+  //81%
+  const myMusic = [
+    {
+      "artist": "Billy Joel",
+      "title": "Piano Man",
+      "release_year": 1973,
+      "formats": [
+        "CD",
+        "8T",
+        "LP"
+      ],
+      "gold": true
+    },
+    {
+    "artist": "leha",
+    "title": "Pokyda",
+    "release_year": 2003,
+    "formats":  ["cd", "8pt", "LP"]
+  }
+  ];
+  //82% 
+  const myStorage = {
+    "car": {
+      "inside": {
+        "glove box": "maps",
+        "passenger seat": "crumbs"
+       },
+      "outside": {
+        "trunk": "jack"
+      }
+    }
+  };
+  const gloveBoxContents = myStorage.car.inside["glove box"];
+  //83%
+  const myPlants = [
+    {
+      type: "flowers",
+      list: [
+        "rose",
+        "tulip",
+        "dandelion"
+      ]
+    },
+    {
+      type: "trees",
+      list: [
+        "fir",
+        "pine",
+        "birch"
+      ]
+    }
+  ];
   
+  const secondTree = myPlants[1].list[1];
+  //84% ne reshil =/
+  // Setup
+const recordCollection = {
+    2548: {
+      albumTitle: 'Slippery When Wet',
+      artist: 'Bon Jovi',
+      tracks: ['Let It Rock', 'You Give Love a Bad Name']
+    },
+    2468: {
+      albumTitle: '1999',
+      artist: 'Prince',
+      tracks: ['1999', 'Little Red Corvette']
+    },
+    1245: {
+      artist: 'Robert Palmer',
+      tracks: []
+    },
+    5439: {
+      albumTitle: 'ABBA Gold'
+    }
+  };
+  
+  // Only change code below this line
+  function updateRecords(records, id, prop, value) {
+    if (value.length == 0){
+      delete recordCollection[id][prop];
+    }
+    else if (prop != "tracks"){
+      recordCollection[id][prop] = value;
+    }else if (prop == "tracks"){
+      recordCollection[id][prop] = value;
+    }else if (prop == "tracks"){
+      recordCollection[id][prop] = [];
+      recordCollection[id][prop].push(value);
+    }
+    return records;
+  }
+  
+  updateRecords(recordCollection, 5439, 'artist', 'ABBA');
+  // Setup
+const recordCollection = {
+    2548: {
+      albumTitle: 'Slippery When Wet',
+      artist: 'Bon Jovi',
+      tracks: ['Let It Rock', 'You Give Love a Bad Name']
+    },
+    2468: {
+      albumTitle: '1999',
+      artist: 'Prince',
+      tracks: ['1999', 'Little Red Corvette']
+    },
+    1245: {
+      artist: 'Robert Palmer',
+      tracks: []
+    },
+    5439: {
+      albumTitle: 'ABBA Gold'
+    }
+  };
+  
+  // Only change code below this line
+  function updateRecords(collection, id, prop, value) { // changed here.
+    
+    if(prop !== 'tracks' && value !== "") {
+      collection[id][prop] = value;
+    }
+    if(prop === 'tracks' && collection[id][prop] === undefined) {
+      collection[id][prop] = [value];
+    }
+    if(prop === 'tracks') {
+      let track = collection[id][prop];
+      track.push(value)
+    }
+    if(value === "") {
+      delete collection[id][prop]
+    }
+    console.log(collection)
+    return collection;
+  }
+  updateRecords(recordCollection, 5439, 'artist', 'ABBA');
