@@ -56,3 +56,24 @@ const quarterOf = (month) => {
     }
     return x;
   };
+
+// sum the strings 
+function sumStr(a,b) {
+  return Number(a)+Number(b)+'';
+}
+
+//Take the Derivative  /razobrat`!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+function derive(coefficient,exponent) {
+  return `${coefficient * exponent}x^${exponent-1}`
+}
+
+//capitalization and mutability /!!!!!!!!!!!!
+function capitalizeWord(word) {
+  return `${word[0].toUpperCase()}${word.slice(1,)}`
+}
+// do u speak english ?? 
+function spEng(sentence){
+  //write your code here
+    const reg = /english/i;
+    return reg.test(sentence);
+  }
