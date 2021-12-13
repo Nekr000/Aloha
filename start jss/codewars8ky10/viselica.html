@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title> Виселица !</title>
+</head>
+<body>
+    <h1>Виселица!</h1>
+    <script>
+    var words = ["алеша",
+    "петруха",
+    "габен",
+    "индиго",
+    "угадай"
+    ];
+    var word = words[Math.floor(Math.random() * words.length)];
+    var answerArray = [];
+    for (var i = 0; i < word.length; i++) {
+        answerArray[i] = "_";
+    }
+    var remainingLetters = word.length;
+
+    while (remainingLetters > 0) {
+        alert(answerArray.join(" ") + "количество букв");
+
+    var guess = prompt("Угадайте букву или нажмите отмена для выхода");
+        if (guess === null) {
+            break;
+        }else if (guess.length !== 1) {
+            alert("Одну букву");
+        }else {
+            for (var j = 0; j <word.length; j++) {
+                if (word[j] === guess) {
+                    answerArray[j] = guess;
+                    remainingLetters--;
+                }
+            }
+        }
+
+    }
+    alert(answerArray.join(" "));
+    alert("Отлично ты победил " + word);
+    </script>
+</body>
+</html>
