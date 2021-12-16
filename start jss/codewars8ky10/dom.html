@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Изучаем DOM</title>
+</head>
+
+<body>
+    <h1 id="main-heading">Привет, мир!</h1>
+    <script src="https://code.jquery.com/jquery-2.1.0.js"></script>
+
+
+    <p id="tests">"Oh ti j syka" </p>
+
+    <script>
+
+        var headingElement = document.getElementById("main-heading");
+        console.log(headingElement.innerHTML);
+        var newHeadingText = prompt("Введите новый заголовок:");
+        headingElement.innerHTML = newHeadingText;
+        $("#main-heading").text(newHeadingText);
+        $("body").append("<p>Это новый параграф</p>");
+        //$("h1").fadeOut(3000).fadeIn(3000);
+        //$("h1").slideUp(1000).slideDown(1000);
+        //  $("p").fadeOut(5000);
+        //  $("p").fadeIn(5000);
+        //  $("p").slideUp(5000);
+        //  $("p").slideDown(5000);
+        // $("p").hide(10000);
+        // $("p").show(10000);
+        //  for (var i = 0; i < 3; i++) {
+        // var hobby = prompt("Назови одно из своих хобби!");
+        //  $("body").append("<p>" + hobby + "</p>");
+        // }
+        
+        let friends = ["Grisha ",
+            "Petya ",
+            "Lina ",
+            "Luna "]
+
+        $("#main-heading").append("лучшие ", friends);
+        $("#main-heading").hide(100);
+        $("#main-heading").show(10000);
+
+        // for (i=4; i<5; i++) {
+        //     $("#tests").fadeOut(1000);
+        //     $("#tests").fadeIn(1000);
+        //     $("#tests").fadeOut(2000);
+        //     $("#tests").fadeIn(2000);
+        //     $("#tests").fadeOut(3000);
+        //     $("#tests").fadeIn(3000);
+        //     $("#tests").fadeOut(4000);
+        //     $("#tests").fadeIn(4000);
+        // }
+            //     for (i=4; i<5; i++) {
+            // $("#tests").fadeOut(1000);
+            // $("#tests").delay(3000);
+            // $("#tests").fadeIn(1000);
+           
+            // //     }
+            // $("h1").fadeTo(2000, 1);
+    </script>
+</body>
+
+</html>5
