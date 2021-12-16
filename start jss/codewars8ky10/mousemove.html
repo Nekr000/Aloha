@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+ <meta charset="UTF-8">
+ <title>Перемещение мышки</title>
+</head>
+<body>
+ <h1 id="heading">Привет, мир!</h1>
+ <script src="https://code.jquery.com/jquery-2.1.0.js"></script>
+ <!-- <script>
+     var clicks = function(kliki) {
+         var topPage = kliki.pageX;
+         var lowPage = kliki.pageY;
+     }
+     $("h1").click(clicks);
+ $("html").mousemove(function (event) {
+ $("#heading").offset({
+    left: topPage;
+    top: lowPage});
+ });
+ </script> -->
+    <!-- //  <script>
+    //     var clickHandler = function(event) {
+    //         console.log("Клик! " + event.pageX + " " + event.pageY);
+    //     };
+    //     $("h1").click(clickHandler);
+    //         </script>
+    <script>
+            $("html").click(function (event) {
+      $("#heading").offset({
+        left: event.pageX,
+        top: event.pageY
+      });
+    });
+    </script> -->
+
+</body>
+</html>
