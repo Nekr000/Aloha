@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+ <title>Canvas</title>
+</head>
+<body>
+ <canvas id="canvas" width="200" height="200"></canvas>
+ <script>
+// var canvas = document.getElementById("canvas");  //залитые прямоугольники
+// var ctx = canvas.getContext("2d");
+// ctx.fillRect(50, 0, 50, 50);
+// ctx.fillRect(70, 50, 10, 30);
+// ctx.fillRect(0, 80, 150, 10);
+// ctx.fillRect(40, 90, 70, 70);
+// ctx.fillRect(40, 160, 10, 50);
+// ctx.fillRect(100, 160, 10, 50);
+// var canvas = document.getElementById("canvas"); //полые прямоугольники
+// var ctx = canvas.getContext("2d");
+// ctx.lineWidth = 4; //толщина контура
+// ctx.strokeRect(10, 10, 100, 20);
+var canvas = document.getElementById("canvas");
+var ctx = canvas.getContext("2d");
+ctx.strokeStyle = "Turquoise";
+ctx.lineWidth = 4;
+ctx.beginPath();
+ctx.moveTo(10, 10);
+ctx.lineTo(60, 60);
+ctx.moveTo(60, 10);
+ctx.lineTo(10, 60);
+ctx.stroke();
+</script>
+</body>
+</html>
+
+
+
+
+<!-- // for (var i = 0; i < 8; i++) {
+    //     ctx.fillRect(i * 10, i * 10, 10, 10);
+    // } -->

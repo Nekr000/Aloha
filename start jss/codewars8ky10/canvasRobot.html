@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+ <title>Canvas</title>
+</head>
+<body>
+ <canvas id="canvas" width="200" height="200"></canvas>
+ <script>
+var canvas = document.getElementById("canvas");
+var ctx = canvas.getContext("2d");
+ctx.fillStyle = "Red";
+ctx.fillRect(50, 0, 50, 50);
+ctx.fillRect(70, 50, 10, 30);
+ctx.fillRect(0, 80, 150, 10);
+ctx.fillRect(40, 90, 70, 70);
+ctx.fillRect(40, 160, 10, 50);
+ctx.fillRect(100, 160, 10, 50);
+</script>
+</body>
+</html>
+
+
+
+
+<!-- // for (var i = 0; i < 8; i++) {
+    //     ctx.fillRect(i * 10, i * 10, 10, 10);
+    // } -->
