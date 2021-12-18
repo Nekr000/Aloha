@@ -24,7 +24,7 @@
     var tries = 15;
 
     while (remainingLetters > 0 && tries > 0, answerArray !== "_") {
-        tries --; 
+        tries --;
         alert(answerArray.join(" ") + " количество букв");
 
     var guess = prompt("Угадайте букву или нажмите отмена для выхода. У вас есть 15 ходов");
@@ -50,29 +50,29 @@
 </html>
 
  <!-- #1. Больше слов
-Добавьте новые слова в массив words. Не забывайте, что все 
+Добавьте новые слова в массив words. Не забывайте, что все
 буквы должны быть строчными.
 #2. Заглавные буквы
-Если игрок введет заглавную букву, она не совпадет с такой же 
-строчной буквой в загаданном слове. Эту вероятность можно 
-учесть, преобразовав введенную букву в строчный регистр. 
+Если игрок введет заглавную букву, она не совпадет с такой же
+строчной буквой в загаданном слове. Эту вероятность можно
+учесть, преобразовав введенную букву в строчный регистр.
 (Подсказка: для этого подойдет метод toLowerCase.) -->
 <!-- #3. Ограничение по ходам
-Сейчас наша «Виселица» позволяет угадывать буквы сколько 
-угодно раз, до победного конца. Добавьте в программу переменную для учета попыток и завершайте игру, если игрок 
-израсходовал все попытки. (Подсказка: проверяйте значение 
-этой переменной в том же цикле while, где проверяется условие remainingLetters > 0, а с помощью операции && можно 
-убедиться, что сразу два логических условия дают true — 
-см. вторую главу.) 
+Сейчас наша «Виселица» позволяет угадывать буквы сколько
+угодно раз, до победного конца. Добавьте в программу переменную для учета попыток и завершайте игру, если игрок
+израсходовал все попытки. (Подсказка: проверяйте значение
+этой переменной в том же цикле while, где проверяется условие remainingLetters > 0, а с помощью операции && можно
+убедиться, что сразу два логических условия дают true —
+см. вторую главу.)
 
 #4. Исправьте ошибку
-В игре есть ошибка: если вы будете снова и снова вводить одну и ту 
+В игре есть ошибка: если вы будете снова и снова вводить одну и ту
 же букву, которая есть в загаданном слове, remainingLetters
-будет снова и снова уменьшаться. Постарайтесь это исправить! 
-(Подсказка: можно добавить проверку еще одного условия — что 
-в соответствующем элементе answerArray все еще стоит знак 
-подчеркивания. Если там другой символ, значит, эта буква уже 
-угадана.) --> -->
+будет снова и снова уменьшаться. Постарайтесь это исправить!
+(Подсказка: можно добавить проверку еще одного условия — что
+в соответствующем элементе answerArray все еще стоит знак
+подчеркивания. Если там другой символ, значит, эта буква уже
+угадана.) &ndash;&gt; -->
 <!-- NEW VISELICA -->
 
 <!DOCTYPE html>
@@ -82,85 +82,112 @@
 </head>
 <body>
     <h1>Виселица!</h1>
+    <canvas id="canvas" width="200" height="200"></canvas>
     <script>
-    var pickWord = function () {
-      // Возвращает случайно выбранное слово
-      var words = [
-        "программа",
-        "макака",
-        "прекрасный",
-        "оладушек"
-      ];
+        var canvas = document.getElementById("canvas");
+        var ctx = canvas.getContext("2d");
 
-      return words[Math.floor(Math.random() * words.length)];
-    };
+        var pickWord = function () {
+            var words = [
+                "javascript",
+                "monkey",
+                "amazing",
+                "pancake"
+            ];
 
-    var setupAnswerArray = function (word) {
-      // Возвращает итоговый массив для заданного слова word
-      var answerArray = [];
-      for (var i = 0; i < word.length; i++) {
-        answerArray[i] = "_";
-      }
+            return words[Math.floor(Math.random() * words.length)];
+        };
 
-      return answerArray;
-    };
+        var setupAnswerArray = function (word) {
+            var answerArray = [];
+            for (var i = 0; i < word.length; i++) {
+                answerArray[i] = "_";
+            }
 
-    var showPlayerProgress = function (answerArray) {
-      // С помощью alert отображает текущее состояние игры
-      alert(answerArray.join(" "));
-    };
+            return answerArray;
+        };
 
-    var getGuess = function () {
-      // Запрашивает ответ игрока с помощью prompt
-      return prompt("Угадайте букву, или нажмите Отмена для выхода из игры.");
-    };
+        var showPlayerProgress = function (answerArray) {
+            alert(answerArray.join(" "));
+        };
 
-    var updateGameState = function (guess, word, answerArray) {
-      // Обновляет answerArray согласно ответу игрока (guess)
-      // возвращает число, обозначающее, сколько раз буква guess
-      // встречается в слове, чтобы можно было обновить значение
-      // remainingLetters
-      var appearances = 0;
-      for (var j = 0; j < word.length; j++) {
-        if (word[j] === guess) {
-          answerArray[j] = guess;
-          appearances++;
+        var getGuess = function () {
+            return prompt("Guess a letter, or click Cancel to stop playing.");
+        };
+
+        var updateGameState = function (guess, word, answerArray) {
+            var appearances = 0;
+            for (var j = 0; j < word.length; j++) {
+                if (word[j] === guess) {
+                    answerArray[j] = guess;
+                    appearances++;
+                }
+            }
+
+            return appearances;
+        };
+
+        var showAnswerAndCongratulatePlayer = function (answerArray) {
+            showPlayerProgress(answerArray);
+            alert("Good job! The answer was " + answerArray.join(""));
+        };
+
+        var drawSegment = function (incorrectGuesses) {
+            ctx.lineWidth = 4;
+
+            if (incorrectGuesses === 0) {
+                ctx.strokeRect(20, 20, 20, 20);
+            } else if (incorrectGuesses === 1) {
+                ctx.beginPath();
+                ctx.moveTo(30, 40);
+                ctx.lineTo(30, 80);
+                ctx.stroke();
+            } else if (incorrectGuesses === 2) {
+                ctx.beginPath();
+                ctx.moveTo(30, 80);
+                ctx.lineTo(10, 110);
+                ctx.stroke();
+            } else if (incorrectGuesses === 3) {
+                ctx.beginPath();
+                ctx.moveTo(30, 80);
+                ctx.lineTo(50, 110);
+                ctx.stroke();
+            } else if (incorrectGuesses === 4) {
+                ctx.beginPath();
+                ctx.moveTo(30, 60);
+                ctx.lineTo(10, 50);
+                ctx.stroke();
+            } else if (incorrectGuesses === 5) {
+                ctx.beginPath();
+                ctx.moveTo(30, 60);
+                ctx.lineTo(50, 50);
+                ctx.stroke();
+            }
+        };
+
+        var word = pickWord();
+        var answerArray = setupAnswerArray(word);
+        var remainingLetters = word.length;
+        var incorrectGuesses = 0;
+
+        while (remainingLetters > 0) { showPlayerProgress(answerArray); var guess = getGuess();
+            if (guess === null) {
+                break;
+            } else if (guess.length !== 1) {
+                alert("Please enter a single letter.");
+            } else {
+                var correctGuesses = updateGameState(guess, word, answerArray);
+
+                remainingLetters -= correctGuesses;
+
+                if (correctGuesses === 0) {
+                    drawSegment(incorrectGuesses);
+                    incorrectGuesses++;
+                }
+            }
         }
-      }
 
-      return appearances;
-    };
-
-    var showAnswerAndCongratulatePlayer = function (answerArray) {
-      // С помощью alert показывает игроку отгаданное слово
-      // и поздравляет его с победой
-      showPlayerProgress(answerArray);
-      alert("Отлично! Было загадано слово " + answerArray.join(""));
-    };
-
-    // word: загаданное слово
-    var word = pickWord();
-    // answerArray: итоговый массив
-    var answerArray = setupAnswerArray(word);
-    // remainingLetters: сколько букв осталось угадать
-    var remainingLetters = word.length;
-
-    while (remainingLetters > 0) {
-      showPlayerProgress(answerArray);
-      // guess: ответ игрока
-      var guess = getGuess();
-      if (guess === null) {
-        break;
-      } else if (guess.length !== 1) {
-        alert("Пожалуйста, введите одиночную букву.");
-      } else {
-        // correctGuesses: количество открытых букв
-        var correctGuesses = updateGameState(guess, word, answerArray);
-        remainingLetters -= correctGuesses;
-      }
-    }
-
-    showAnswerAndCongratulatePlayer(answerArray);
+        showAnswerAndCongratulatePlayer(answerArray);
     </script>
 </body>
 </html>

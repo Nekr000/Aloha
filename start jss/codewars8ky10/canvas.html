@@ -5,6 +5,7 @@
 </head>
 <body>
  <canvas id="canvas" width="200" height="200"></canvas>
+ <script src="https://code.jquery.com/jquery-2.1.0.js"></script>
  <script>
 // var canvas = document.getElementById("canvas");  //залитые прямоугольники
 // var ctx = canvas.getContext("2d");
@@ -18,32 +19,153 @@
 // var ctx = canvas.getContext("2d");
 // ctx.lineWidth = 4; //толщина контура
 // ctx.strokeRect(10, 10, 100, 20);
+// let canvas = document.getElementById("canvas");
+// let ctx = canvas.getContext("2d");
+// ctx.strokeStyle = "purple";
+// // ctx.lineWidth = 4;
+// // ctx.beginPath();
+// // ctx.moveTo(10, 10);
+// // ctx.lineTo(60, 60);
+// // ctx.moveTo(60, 10);
+// // ctx.lineTo(10, 60);
+// // ctx.stroke();
+// ctx.strokeRect(20, 0, 30, 30);
+// ctx.lineWidth = 5;
+// ctx.beginPath();
+// ctx.moveTo(35, 30);
+// ctx.lineTo(35, 95);
+// ctx.moveTo(55, 40);
+// ctx.lineTo(35, 50);
+// ctx.moveTo(35, 50);
+// ctx.lineTo(15, 40);
+// ctx.moveTo(35,95);
+// ctx.lineTo(15,120);
+// ctx.moveTo(37,95);
+// ctx.lineTo(60,120);
+//
+//
+// ctx.stroke();
 let canvas = document.getElementById("canvas");
 let ctx = canvas.getContext("2d");
-ctx.strokeStyle = "purple";
-// ctx.lineWidth = 4;
+let circle = function (x, y, radius, number) {
+  ctx.beginPath();
+  ctx.arc(x, y, radius, 0, Math.PI * 2, false);
+  ctx.stroke();
+  if (number === 1) {
+   ctx.fillStyle = "black";
+   ctx.fill();
+  } else if (number === 2) {
+   ctx.fillStyle = "orange";
+   ctx.fill();
+  }
+ };
+$("canvas").mousemove(function (event) {
+ circle(event.offsetX, event.offsetY, 3, 1);
+});
+
+
+
+// let line = function (points) {
+//  ctx.beginPath();
+//  ctx.moveTo(points[0][0], points[0][1]);
+//  for (let i = 1; i < points.length; i++) {
+//   ctx.lineTo(points[i][0], points[i][1]);
+//  }
+//  ctx.stroke();
+// }
+//  let mysteryPoints = [[50, 50], [50, 100], [25, 120], [100, 50], [70, 90], [100, 90], [70, 120]];
+// line(mysteryPoints);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// ctx.fillStyle = "pink";
 // ctx.beginPath();
-// ctx.moveTo(10, 10);
-// ctx.lineTo(60, 60);
-// ctx.moveTo(60, 10);
-// ctx.lineTo(10, 60);
+// ctx.moveTo(100, 100);
+// ctx.lineTo(100, 60);
+// ctx.lineTo(130, 30);
+// ctx.lineTo(160, 60);
+// ctx.lineTo(160, 100);
+// ctx.lineTo(100, 100);
+// ctx.fill();
+
+// ctx.lineWidth = 2;
+// ctx.strokeStyle = "Green";
+// ctx.beginPath();
+// ctx.arc(50, 50, 20, 0, Math.PI / 2, false);
 // ctx.stroke();
-ctx.strokeRect(20, 0, 30, 30);
-ctx.lineWidth = 5;
-ctx.beginPath();
-ctx.moveTo(35, 30);
-ctx.lineTo(35, 95);
-ctx.moveTo(55, 40);
-ctx.lineTo(35, 50);
-ctx.moveTo(35, 50);
-ctx.lineTo(15, 40);
-ctx.moveTo(35,95);
-ctx.lineTo(15,120);
-ctx.moveTo(37,95);
-ctx.lineTo(60,120);
+// ctx.beginPath();
+// ctx.arc(100, 50, 20, 0, Math.PI, false);
+// ctx.stroke();
+// ctx.beginPath();
+// ctx.arc(150, 50, 20, 0, Math.PI * 2, false);
+// ctx.stroke();
+//
+//  let circle = function (x, y, radius, number) {
+//   ctx.beginPath();
+//   ctx.arc(x, y, radius, 0, Math.PI * 2, false);
+//   ctx.stroke();
+//   if (number === 1) {
+//    ctx.fillStyle = "black";
+//    ctx.fill();
+//   } else if (number === 2) {
+//    ctx.fillStyle = "orange";
+//    ctx.fill();
+//   }
+//  };
+//   const drawSnowman = function (a, b) {
+//   ctx.lineWidth = 4;
+//   circle(a + 50, b, 30);
+//   circle(a + 50, b + 70, 40);
+//   circle(a +40, b - 10, 5, 1);
+//   circle(a + 50, b, 5, 2);
+//   circle(a + 60, b -10, 5, 1);
+//   circle(a + 50, b + 50, 5, 1);
+//   circle(a + 50, b + 70, 5, 1);
+//   circle(a + 50, b + 90, 5, 1);
+//
+//  };
+//
+// drawSnowman(50, 50);
+// drawSnowman(100, 120);
+// ctx.lineWidth = 4;
+// circle(100, 50, 30);
+// circle(100, 120, 40);
+// circle(90, 40, 5, 1);
+// circle(100, 50, 5, 2);
+// circle(110, 40, 5, 1);
+// circle(100, 100, 5, 1);
+// circle(100, 120, 5, 1);
+// circle(100, 140, 5, 1);
 
-
-ctx.stroke();
+// ctx.lineWidth = 3;
+// ctx.strokeStyle = "Red";
+// circle(100, 100, 10, 1);
+// ctx.strokeStyle = "Orange";
+// circle(100, 100, 20, 3);
+// ctx.strokeStyle = "Yellow";
+// circle(100, 100, 30);
+// ctx.strokeStyle = "Green";
+// circle(100, 100, 40);
+// ctx.strokeStyle = "Blue";
+// circle(100, 100, 50);
+// ctx.strokeStyle = "Purple";
+// circle(100, 100, 60);
 </script>
 </body>
 </html>
