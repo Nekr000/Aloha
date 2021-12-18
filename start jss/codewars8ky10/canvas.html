@@ -18,15 +18,31 @@
 // var ctx = canvas.getContext("2d");
 // ctx.lineWidth = 4; //толщина контура
 // ctx.strokeRect(10, 10, 100, 20);
-var canvas = document.getElementById("canvas");
-var ctx = canvas.getContext("2d");
-ctx.strokeStyle = "Turquoise";
-ctx.lineWidth = 4;
+let canvas = document.getElementById("canvas");
+let ctx = canvas.getContext("2d");
+ctx.strokeStyle = "purple";
+// ctx.lineWidth = 4;
+// ctx.beginPath();
+// ctx.moveTo(10, 10);
+// ctx.lineTo(60, 60);
+// ctx.moveTo(60, 10);
+// ctx.lineTo(10, 60);
+// ctx.stroke();
+ctx.strokeRect(20, 0, 30, 30);
+ctx.lineWidth = 5;
 ctx.beginPath();
-ctx.moveTo(10, 10);
-ctx.lineTo(60, 60);
-ctx.moveTo(60, 10);
-ctx.lineTo(10, 60);
+ctx.moveTo(35, 30);
+ctx.lineTo(35, 95);
+ctx.moveTo(55, 40);
+ctx.lineTo(35, 50);
+ctx.moveTo(35, 50);
+ctx.lineTo(15, 40);
+ctx.moveTo(35,95);
+ctx.lineTo(15,120);
+ctx.moveTo(37,95);
+ctx.lineTo(60,120);
+
+
 ctx.stroke();
 </script>
 </body>
