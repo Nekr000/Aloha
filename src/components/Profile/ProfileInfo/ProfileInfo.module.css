@@ -1,0 +1,17 @@
+
+.content {
+    grid-area: c;
+    background-color: aqua;
+}
+
+.item {
+    color: midnightblue;
+}
+
+.banner {
+    width: 1700px;
+    height: 150px;
+}
+.descriptionBlock {
+    padding: 10px;
+}

@@ -1,0 +1,21 @@
+
+.post {
+    grid-area: b;
+    background-color: aqua;
+}
+
+.item {
+    color: midnightblue;
+}
+
+.item {
+    grid-area: b;
+    background-color: aqua;
+
+}
+
+.item img {
+    width: 50px;
+    height: 50px;
+    border-radius: 30px;
+}

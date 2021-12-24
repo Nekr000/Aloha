@@ -1,0 +1,11 @@
+
+.post {
+    grid-area: b;
+    background-color: aqua;
+}
+.myPost {
+    padding: 10px;
+}
+.newPost{
+    padding: 10px;
+}
